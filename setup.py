@@ -63,6 +63,7 @@ class optional_build_ext(build_ext):
         print('    ' + repr(e))
         print('*' * 80)
 
+
 setup(
     name='nameless',
     version='0.1.0',
