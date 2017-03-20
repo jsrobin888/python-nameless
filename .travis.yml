@@ -1,6 +1,6 @@
 language: python
-python: '3.5'
 sudo: false
+cache: pip
 env:
   global:
     - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
@@ -8,17 +8,29 @@ env:
   matrix:
     - TOXENV=check
     - TOXENV=docs
-
-    - TOXENV=2.7-cover,report,coveralls,codecov
-    - TOXENV=2.7-nocov
-    - TOXENV=3.3-cover,report,coveralls,codecov
-    - TOXENV=3.3-nocov
-    - TOXENV=3.4-cover,report,coveralls,codecov
-    - TOXENV=3.4-nocov
-    - TOXENV=3.5-cover,report,coveralls,codecov
-    - TOXENV=3.5-nocov
-    - TOXENV=pypy-cover,report,coveralls,codecov
-    - TOXENV=pypy-nocov
+matrix:
+  include:
+    - python: 7.-
+      env:
+        - TOXENV=2.7-cover,report,coveralls,codecov    - python: 7.-
+      env:
+        - TOXENV=2.7-nocov    - python: 3.-
+      env:
+        - TOXENV=3.3-cover,report,coveralls,codecov    - python: 3.-
+      env:
+        - TOXENV=3.3-nocov    - python: 4.-
+      env:
+        - TOXENV=3.4-cover,report,coveralls,codecov    - python: 4.-
+      env:
+        - TOXENV=3.4-nocov    - python: 5.-
+      env:
+        - TOXENV=3.5-cover,report,coveralls,codecov    - python: 5.-
+      env:
+        - TOXENV=3.5-nocov    - python: pypy
+      env:
+        - TOXENV=pypy-cover,report,coveralls,codecov    - python: pypy
+      env:
+        - TOXENV=pypy-nocov
 before_install:
   - python --version
   - uname -a
@@ -34,11 +46,6 @@ script:
 after_failure:
   - more .tox/log/* | cat
   - more .tox/*/log/* | cat
-before_cache:
-  - rm -rf $HOME/.cache/pip/log
-cache:
-  directories:
-    - $HOME/.cache/pip
 notifications:
   email:
     on_success: never
