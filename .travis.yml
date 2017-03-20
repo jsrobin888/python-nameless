@@ -46,7 +46,8 @@ matrix:
         - TOXENV=pypy-cover,report,extension-coveralls,coveralls,codecov
     - python: 'pypy'
       env:
-        - TOXENV=pypy-nocovbefore_install:
+        - TOXENV=pypy-nocov
+before_install:
   - python --version
   - uname -a
   - lsb_release -a
