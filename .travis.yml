@@ -1,6 +1,6 @@
 language: python
-python: '3.5'
 sudo: false
+cache: pip
 env:
   global:
     - LD_PRELOAD=/lib/x86_64-linux-gnu/libSegFault.so
@@ -8,18 +8,33 @@ env:
   matrix:
     - TOXENV=check
     - TOXENV=docs
-
-    - TOXENV=py27-cover,report,extension-coveralls,coveralls,codecov
-    - TOXENV=py27-nocov
-    - TOXENV=py33-cover,report,extension-coveralls,coveralls,codecov
-    - TOXENV=py33-nocov
-    - TOXENV=py34-cover,report,extension-coveralls,coveralls,codecov
-    - TOXENV=py34-nocov
-    - TOXENV=py35-cover,report,extension-coveralls,coveralls,codecov
-    - TOXENV=py35-nocov
-    - TOXENV=pypy-cover,report,extension-coveralls,coveralls,codecov
-    - TOXENV=pypy-nocov
-before_install:
+matrix:
+  include:
+    - python: 2.7
+      env:
+        - TOXENV=py27-cover,report,extension-coveralls,coveralls,codecov    - python: 2.7
+      env:
+        - TOXENV=py27-nocov    - python: 3.3
+      env:
+        - TOXENV=py33-cover,report,extension-coveralls,coveralls,codecov    - python: 3.3
+      env:
+        - TOXENV=py33-nocov    - python: 3.4
+      env:
+        - TOXENV=py34-cover,report,extension-coveralls,coveralls,codecov    - python: 3.4
+      env:
+        - TOXENV=py34-nocov    - python: 3.5
+      env:
+        - TOXENV=py35-cover,report,extension-coveralls,coveralls,codecov    - python: 3.5
+      env:
+        - TOXENV=py35-nocov    - python: 3.6
+      env:
+        - TOXENV=py36-cover,report,extension-coveralls,coveralls,codecov    - python: 3.6
+      env:
+        - TOXENV=py36-nocov    - python: pypy
+      env:
+        - TOXENV=pypy-cover,report,extension-coveralls,coveralls,codecov    - python: pypy
+      env:
+        - TOXENV=pypy-nocovbefore_install:
   - python --version
   - uname -a
   - lsb_release -a
@@ -34,11 +49,6 @@ script:
 after_failure:
   - more .tox/log/* | cat
   - more .tox/*/log/* | cat
-before_cache:
-  - rm -rf $HOME/.cache/pip/log
-cache:
-  directories:
-    - $HOME/.cache/pip
 notifications:
   email:
     on_success: never

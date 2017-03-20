@@ -14,7 +14,8 @@ Overview
         | |coveralls| |codecov|
         | |scrutinizer| |codacy| |codeclimate|
     * - package
-      - |version| |downloads| |wheel| |supported-versions| |supported-implementations|
+      - | |version| |wheel| |supported-versions| |supported-implementations|
+        | |commits-since|
 
 .. |docs| image:: https://readthedocs.org/projects/python-nameless/badge/?style=flat
     :target: https://readthedocs.org/projects/python-nameless
@@ -40,7 +41,7 @@ Overview
     :alt: Coverage Status
     :target: https://codecov.io/github/ionelmc/python-nameless
 
-.. |codacy| image:: https://img.shields.io/codacy/REPLACE_WITH_PROJECT_ID.svg?style=flat
+.. |codacy| image:: https://img.shields.io/codacy/REPLACE_WITH_PROJECT_ID.svg
     :target: https://www.codacy.com/app/ionelmc/python-nameless
     :alt: Codacy Code Quality Status
 
@@ -48,27 +49,27 @@ Overview
    :target: https://codeclimate.com/github/ionelmc/python-nameless
    :alt: CodeClimate Quality Status
 
-.. |version| image:: https://img.shields.io/pypi/v/nameless.svg?style=flat
+.. |version| image:: https://img.shields.io/pypi/v/nameless.svg
     :alt: PyPI Package latest release
     :target: https://pypi.python.org/pypi/nameless
 
-.. |downloads| image:: https://img.shields.io/pypi/dm/nameless.svg?style=flat
-    :alt: PyPI Package monthly downloads
-    :target: https://pypi.python.org/pypi/nameless
+.. |commits-since| image:: https://img.shields.io/github/commits-since/ionelmc/python-nameless/v0.1.0.svg
+    :alt: Commits since latest release
+    :target: https://github.com/ionelmc/python-nameless/compare/v0.1.0...master
 
-.. |wheel| image:: https://img.shields.io/pypi/wheel/nameless.svg?style=flat
+.. |wheel| image:: https://img.shields.io/pypi/wheel/nameless.svg
     :alt: PyPI Wheel
     :target: https://pypi.python.org/pypi/nameless
 
-.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/nameless.svg?style=flat
+.. |supported-versions| image:: https://img.shields.io/pypi/pyversions/nameless.svg
     :alt: Supported versions
     :target: https://pypi.python.org/pypi/nameless
 
-.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/nameless.svg?style=flat
+.. |supported-implementations| image:: https://img.shields.io/pypi/implementation/nameless.svg
     :alt: Supported implementations
     :target: https://pypi.python.org/pypi/nameless
 
-.. |scrutinizer| image:: https://img.shields.io/scrutinizer/g/ionelmc/python-nameless/master.svg?style=flat
+.. |scrutinizer| image:: https://img.shields.io/scrutinizer/g/ionelmc/python-nameless/master.svg
     :alt: Scrutinizer Status
     :target: https://scrutinizer-ci.com/g/ionelmc/python-nameless/
 
