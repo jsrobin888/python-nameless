@@ -10,7 +10,6 @@ env:
     - TOXENV=docs
 matrix:
   include:
-
     - python: '2.7'
       env:
         - TOXENV=py27-cover,report,extension-coveralls,coveralls,codecov
@@ -41,10 +40,10 @@ matrix:
     - python: '3.6'
       env:
         - TOXENV=py36-nocov
-    - python: 'pypy'
+    - python: 'pypy-5.4'
       env:
         - TOXENV=pypy-cover,report,extension-coveralls,coveralls,codecov
-    - python: 'pypy'
+    - python: 'pypy-5.4'
       env:
         - TOXENV=pypy-nocov
 before_install:
