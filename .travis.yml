@@ -44,7 +44,7 @@ matrix:
     - python: 'pypy'
       env:
         - TOXENV=pypy-cover,report,extension-coveralls,coveralls,codecov
-    - python: 'pypy'
+    - python: 'pypy-c-jit-latest'
       env:
         - TOXENV=pypy-nocov
 before_install:
