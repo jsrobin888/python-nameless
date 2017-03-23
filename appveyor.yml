@@ -23,6 +23,7 @@ environment:
       PYTHON_HOME: C:\Python27-x64
       PYTHON_VERSION: '2.7'
       PYTHON_ARCH: '64'
+
     - TOXENV: 'py27-nocov'
       TOXPYTHON: C:\Python27\python.exe
       PYTHON_HOME: C:\Python27
@@ -48,6 +49,7 @@ environment:
       PYTHON_HOME: C:\Python33-x64
       PYTHON_VERSION: '3.3'
       PYTHON_ARCH: '64'
+
     - TOXENV: 'py33-nocov'
       TOXPYTHON: C:\Python33\python.exe
       PYTHON_HOME: C:\Python33
@@ -73,6 +75,7 @@ environment:
       PYTHON_HOME: C:\Python34-x64
       PYTHON_VERSION: '3.4'
       PYTHON_ARCH: '64'
+
     - TOXENV: 'py34-nocov'
       TOXPYTHON: C:\Python34\python.exe
       PYTHON_HOME: C:\Python34
@@ -97,6 +100,7 @@ environment:
       PYTHON_HOME: C:\Python35-x64
       PYTHON_VERSION: '3.5'
       PYTHON_ARCH: '64'
+
     - TOXENV: 'py35-nocov'
       TOXPYTHON: C:\Python35\python.exe
       PYTHON_HOME: C:\Python35
@@ -120,6 +124,7 @@ environment:
       PYTHON_HOME: C:\Python36-x64
       PYTHON_VERSION: '3.6'
       PYTHON_ARCH: '64'
+
     - TOXENV: 'py36-nocov'
       TOXPYTHON: C:\Python36\python.exe
       PYTHON_HOME: C:\Python36
