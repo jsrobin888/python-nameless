@@ -14,4 +14,4 @@ def test_main():
 
 
 def test_longest():
-    assert longest(['a', 'bc', 'abc']) == 'abc'
+    assert longest([b'a', b'bc', b'abc']) == b'abc'
