@@ -78,7 +78,7 @@ Overview
 
 An example package. Generated with https://github.com/ionelmc/cookiecutter-pylibrary
 
-* Free software: BSD license
+* Free software: BSD 2-Clause License
 
 Installation
 ============
