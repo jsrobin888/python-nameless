@@ -36,8 +36,6 @@ static PyObject* longest(PyObject *self, PyObject *value) {
 
     Py_DECREF(len);
     Py_DECREF(max);
-    Py_DECREF(args);
-    Py_DECREF(kwargs);
 
     return result;
 }
