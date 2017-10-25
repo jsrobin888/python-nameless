@@ -1,5 +1,6 @@
 
 from click.testing import CliRunner
+
 from nameless import longest
 from nameless.cli import main
 
