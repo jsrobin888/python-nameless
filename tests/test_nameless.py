@@ -1,6 +1,6 @@
 
-from nameless.cli import main
 from nameless import longest
+from nameless.cli import main
 
 
 def test_main():
