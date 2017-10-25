@@ -4,13 +4,17 @@ from __future__ import absolute_import
 from __future__ import print_function
 
 import io
+import os
 import re
+import sys
 from glob import glob
 from os.path import basename
 from os.path import dirname
 from os.path import join
+from os.path import relpath
 from os.path import splitext
 
+from setuptools import Extension
 from setuptools import find_packages
 from setuptools import setup
 
@@ -21,6 +25,12 @@ def read(*names, **kwargs):
         encoding=kwargs.get('encoding', 'utf8')
     ).read()
 
+
+# Enable code coverage for C code: we can't use CFLAGS=-coverage in tox.ini, since that may mess with compiling
+# dependencies (e.g. numpy). Therefore we set SETUPPY_CFLAGS=-coverage in tox.ini and copy it to CFLAGS here (after
+# deps have been safely installed).
+if 'TOXENV' in os.environ and 'SETUPPY_CFLAGS' in os.environ:
+    os.environ['CFLAGS'] = os.environ['SETUPPY_CFLAGS']
 
 setup(
     name='nameless',
@@ -66,6 +76,7 @@ setup(
         # eg: 'keyword1', 'keyword2', 'keyword3',
     ],
     install_requires=[
+        'cffi>=1.0.0',
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
     extras_require={
@@ -78,4 +89,8 @@ setup(
             'nameless = nameless.cli:main',
         ]
     },
+    setup_requires=[
+        'cffi>=1.0.0',
+    ] if any(i.startswith('build') or i.startswith('bdist') for i in sys.argv) else [],
+    cffi_modules=[i + ':ffi' for i in glob('src/*/_*_build.py')],
 )

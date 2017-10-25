@@ -6,7 +6,7 @@ cookiecutter:
     c_extension_function: longest
     c_extension_module: _nameless
     c_extension_optional: 'no'
-    c_extension_support: 'no'
+    c_extension_support: cffi
     codacy: 'no'
     codeclimate: 'no'
     codecov: 'yes'
