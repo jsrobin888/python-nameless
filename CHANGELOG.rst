@@ -2,7 +2,7 @@
 Changelog
 =========
 
-0.1.0 (2017-11-01)
+0.1.0 (<TODAY>)
 ------------------
 
 * First release on PyPI.
