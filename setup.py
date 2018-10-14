@@ -20,10 +20,11 @@ from setuptools.command.build_ext import build_ext
 
 
 def read(*names, **kwargs):
-    return io.open(
+    with io.open(
         join(dirname(__file__), *names),
         encoding=kwargs.get('encoding', 'utf8')
-    ).read()
+    ) as fh:
+        return fh.read()
 
 
 # Enable code coverage for C code: we can't use CFLAGS=-coverage in tox.ini, since that may mess with compiling
