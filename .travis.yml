@@ -1,5 +1,4 @@
 language: python
-sudo: false
 cache: pip
 env:
   global:
@@ -36,12 +35,10 @@ matrix:
         - TOXENV=py36-nocov
     - python: '3.7'
       dist: xenial
-      sudo: required
       env:
         - TOXENV=py37-cover,report,extension-coveralls,coveralls,codecov
     - python: '3.7'
       dist: xenial
-      sudo: required
       env:
         - TOXENV=py37-nocov
     - python: 'pypy'
